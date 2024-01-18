@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+raaa
+
+
+<form action="/students/add" method="post" th:object="${stdedit}">
+    <input type="hidden" th:field="*{id}">
+    <input type="text" th:field="*{age}">
+    <input type="text" name="name" th:field="*{name}">
+    <select th:field="*{classs}">
+        <option th:each="cls : ${clsed}" th:value="${cls.id}" th:text="${cls.name}"></option>
+    </select>
+    <button type="submit">OKUI</button>
+</form>
+</body>
+</html>

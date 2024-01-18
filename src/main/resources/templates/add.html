@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en"  xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+cmm haha
+
+<form action="/students/add" method="post" th:object="${std}">
+    <input type="text" name="age" th:field="*{age}">
+    <input type="text" name="name" th:field="*{name}">
+    <select th:field="*{classs}">
+        <option th:each="cls : ${cls}" th:value="${cls.id}" th:text="${cls.name}"></option>
+    </select>
+    <button type="submit">OKUI</button>
+</form>
+</body>
+</html>

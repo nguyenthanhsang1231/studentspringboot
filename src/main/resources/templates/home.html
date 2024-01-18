@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en"  xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+cmm
+
+<form action="/students/search">tim kiem
+<input name="name">
+    <button type="submit">tim kiem</button>
+</form>
+
+<a href="/students/add">add</a>
+<div th:each="item : ${list}">
+    <input type="hidden" th:text="${item.id}">
+    <span th:text="${item.age}"></span>
+    <span th:text="${item.name}"></span>
+    <span th:text="${item.classs.name}"></span>
+    <a th:href="@{/students/edit/__${item.id}__}">Edit</a>
+    <a onclick="return confirm('Are you sure?')" th:href="@{/students/delete/__${item.id}__}">delete</a>
+</div>
+</body>
+</html>
